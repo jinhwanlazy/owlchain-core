@@ -167,7 +167,9 @@ static long decode(string cypher_string)
     }
     while (length > 0);
 
-    BigInt bigInt = BigInt( plain_string_builder.data.dup.reverse );
+    char[] res = plain_string_builder.data.dup;
+    reverse( res );
+    BigInt bigInt = BigInt( res );
     
     return bigInt.toLong();
 }
